@@ -3,6 +3,7 @@ package com.foodtruck.foodtruck;
 import com.foodtruck.foodtruck.domain.MobileFoodFacilityPermit;
 import com.foodtruck.foodtruck.service.MobileFoodFacilityPermitService;
 import com.foodtruck.foodtruck.util.MobileFoodFacilityPermitParser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,7 @@ import org.springframework.context.ApplicationContextAware;
 import java.util.List;
 
 @SpringBootApplication
+@Slf4j
 public class FoodTruckApplication implements CommandLineRunner, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -29,7 +31,7 @@ public class FoodTruckApplication implements CommandLineRunner, ApplicationConte
 
         List<MobileFoodFacilityPermit> mobileFoodFacilityPermits = parser.readCsvSource(Thread.currentThread().getContextClassLoader().getResourceAsStream("samples/Mobile_Food_Facility_Permit.csv"));
         List<MobileFoodFacilityPermit> resultList = permitService.filterByFacilityTypeAndFoodItems(mobileFoodFacilityPermits, "Truck", "taco");
-        System.out.println(resultList);
+        log.info(resultList.toString());
 
     }
 

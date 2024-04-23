@@ -13,11 +13,10 @@ public class MobileFoodFacilityPermitService {
     public List<MobileFoodFacilityPermit> filterByFacilityTypeAndFoodItems(List<MobileFoodFacilityPermit> source,
                                                                            String facilityType, String foodItems) {
 
-        List<MobileFoodFacilityPermit> resultList = source.stream()
+        return source.stream()
                 .filter(item -> facilityType.equals(item.getFacilityType()))
                 .filter(item -> item.getFoodItems().contains(foodItems))
                 .toList();
 
-        return resultList;
     }
 }

@@ -26,7 +26,7 @@ public class MobileFoodFacilityPermit {
 
     private String permit;
 
-    private String Status;
+    private String status;
 
     private String foodItems;
 
