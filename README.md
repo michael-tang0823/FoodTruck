@@ -1,7 +1,7 @@
 # FoodTruck
 
 ### Pre-requisites
-1. install jdk 8
+1. install jdk 17
 2. install maven 3.6 or above (optional)
 
 
@@ -10,3 +10,4 @@
 1. goto the project directory
 2. run ./mvnw clean package in macOS or ./mvnw.cmd clean package in Windows.
 3. run java -jar target/foodtruck-0.0.1-SNAPSHOT.jar
+4. the result shows in the console
