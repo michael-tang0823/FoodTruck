@@ -28,6 +28,6 @@ class MobileFoodFacilityPermitParserTest {
     @Test
     void readCsvSource() {
         List<MobileFoodFacilityPermit> mobileFoodFacilityPermits = parser.readCsvSource(Thread.currentThread().getContextClassLoader().getResourceAsStream("samples/Mobile_Food_Facility_Permit.csv"));
-        assertThat(mobileFoodFacilityPermits.size()).isEqualTo(481);
+        assertThat(mobileFoodFacilityPermits).hasSize(481);
     }
 }
