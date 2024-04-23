@@ -31,7 +31,11 @@ public class FoodTruckApplication implements CommandLineRunner, ApplicationConte
 
         List<MobileFoodFacilityPermit> mobileFoodFacilityPermits = parser.readCsvSource(Thread.currentThread().getContextClassLoader().getResourceAsStream("samples/Mobile_Food_Facility_Permit.csv"));
         List<MobileFoodFacilityPermit> resultList = permitService.filterByFacilityTypeAndFoodItems(mobileFoodFacilityPermits, "Truck", "taco");
-        log.info(resultList.toString());
+
+        for (MobileFoodFacilityPermit permit: resultList) {
+            log.info(permit.getFacilityType() + " " + permit.getFoodItems());
+        }
+
 
     }
 
